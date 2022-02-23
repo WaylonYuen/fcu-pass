@@ -97,6 +97,7 @@ p {
   border-right: 0;
   border-color: #e5e5e5;
   display: flex;
+  align-items: center;
   justify-content: flex-end;
 }
 
@@ -106,4 +107,6 @@ p {
   padding: 5px;
   color: white;
   border-radius: 5px;
+  height: 30px;
+  width: 50px;
 }
