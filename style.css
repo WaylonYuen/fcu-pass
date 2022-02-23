@@ -45,7 +45,6 @@
   height: 240px;
   width: 240px;
   animation: glow 1s infinite alternate;
-  background-color: rgba(0, 108, 146, 1);
   border-radius: 50%;
   display: inline-block;
 }
