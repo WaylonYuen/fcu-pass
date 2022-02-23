@@ -34,10 +34,12 @@ function checkName() {
 function setName() {
   let name;
   while (true) {
-    let input = window.prompt("請輸入姓名：");
+    let input = window.prompt("請輸入姓名");
     if (input != null && input != "") {
       name = input;
       break;
+    } else {
+      alert("輸入名稱有誤");
     }
   }
   localStorage.setItem("name", name);
@@ -46,13 +48,15 @@ function setName() {
 
 function resetName() {
   while (true) {
-    let input = window.prompt("請輸入姓名：");
+    let input = window.prompt("請輸入姓名");
     if (input != null && input != "") {
-      name = input;
+      newName = input;
       break;
+    } else {
+      alert("輸入名稱有誤");
     }
   }
-  localStorage.setItem("name", name);
+  localStorage.setItem("name", newName);
   document.getElementById("name").innerHTML = localStorage.getItem("name");
   window.scrollTo({ top: -10, behavior: "smooth" });
 }
