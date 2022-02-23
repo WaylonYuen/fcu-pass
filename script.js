@@ -12,6 +12,12 @@ let day = d.getDay();
 let month = d.getMonth() + 1;
 let date = d.getDate();
 
+window.onpageshow = function (e) {
+  if (e.persisted) {
+    window.location.reload();
+  }
+};
+
 window.onload = function () {
   document.getElementById("dot").style.backgroundColor = color_list[day];
   document.getElementById("date").innerHTML =
