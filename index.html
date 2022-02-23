@@ -10,7 +10,7 @@
       rel="stylesheet"
     />
     <script src="./script.js"></script>
-    <title>逢甲 PASS</title>
+    <title>逢甲 PASS test</title>
   </head>
   <body>
     <div class="card">
@@ -21,7 +21,8 @@
         <span class="dot" id="dot">
           <div class="info">
             <h1 id="date">{DATE}</h1>
-            <h2>巧 虎<br />自主健康管理<br />PASS</h2>
+            <h2 id="name">{NAME}</h2>
+            <h2>自主健康管理<br />PASS</h2>
             <p><br />逢甲大學關心您</p>
           </div>
         </span>
@@ -32,6 +33,9 @@
     </div>
     <div class="background">
       <img class="bg" src="./img/background.png" />
+    </div>
+    <div class="reset-area">
+      <button class="reset-btn" onclick="resetName()">重設姓名</button>
     </div>
   </body>
 </html>
