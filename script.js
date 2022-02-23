@@ -58,5 +58,5 @@ function resetName() {
   }
   localStorage.setItem("name", newName);
   document.getElementById("name").innerHTML = localStorage.getItem("name");
-  window.scrollTo({ top: -10, behavior: "smooth" });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
