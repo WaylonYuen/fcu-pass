@@ -117,6 +117,8 @@ p {
 
 .reset-btn {
   border-style: none;
+  background-color: #48d5c9;
+  color: white;
   padding: 6px;
   border-radius: 6px;
 }

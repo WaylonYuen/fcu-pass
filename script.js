@@ -12,12 +12,6 @@ let day = d.getDay();
 let month = d.getMonth() + 1;
 let date = d.getDate();
 
-window.onpageshow = function (e) {
-  if (e.persisted) {
-    window.location.reload();
-  }
-};
-
 window.onload = function () {
   document.getElementById("dot").style.backgroundColor = color_list[day];
   document.getElementById("date").innerHTML =
@@ -40,7 +34,7 @@ function checkName() {
 function setName() {
   let name;
   while (true) {
-    let input = prompt("請輸入姓名：");
+    let input = window.prompt("請輸入姓名：");
     if (input != null && input != "") {
       name = input;
       break;
@@ -52,7 +46,7 @@ function setName() {
 
 function resetName() {
   while (true) {
-    let input = prompt("請輸入姓名：");
+    let input = window.prompt("請輸入姓名：");
     if (input != null && input != "") {
       name = input;
       break;
