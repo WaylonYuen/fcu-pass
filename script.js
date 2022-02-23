@@ -39,7 +39,7 @@ function setName() {
       name = input;
       break;
     } else {
-      alert("輸入名稱有誤");
+      window.alert("輸入名稱有誤");
     }
   }
   localStorage.setItem("name", name);
@@ -53,7 +53,7 @@ function resetName() {
       newName = input;
       break;
     } else {
-      alert("輸入名稱有誤");
+      window.alert("輸入名稱有誤");
     }
   }
   localStorage.setItem("name", newName);
