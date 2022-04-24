@@ -11,56 +11,34 @@ let d = new Date();
 let day = d.getDay();
 let month = d.getMonth() + 1;
 let date = d.getDate();
+let defaultName = "undefine"
 
 window.onload = function () {
   document.getElementById("dot").style.backgroundColor = color_list[day];
   document.getElementById("date").innerHTML =
     ("0" + month).slice(-2) + "/" + ("0" + date).slice(-2);
-  if (checkName() == true) {
+  if (checkName()) {
     document.getElementById("name").innerHTML = localStorage.getItem("name");
   } else {
-    setName();
+    setName(defaultName, false, "輸入名稱有誤，捲動到頁面底部進行名稱更改")
   }
 };
 
-function checkName() {
-  if (localStorage.getItem("name")) {
-    return true;
-  } else {
-    return false;
-  }
-}
+checkName = () => localStorage.getItem("name")
 
-function setName() {
-  let name;
-  while (true) {
-    let input = window.prompt("請輸入姓名");
-    if (input != null && input != "") {
-      name = input;
-      break;
-    } else {
-      window.alert("輸入名稱有誤，請重新輸入");
-    }
-  }
+function setName(input, showLog, errorMsg) {
+  let name =  (input != null && input != "")
+    ? input : showLog ? window.alert(errorMsg) : defaultName;
   localStorage.setItem("name", name);
   document.getElementById("name").innerHTML = localStorage.getItem("name");
 }
 
 function resetName() {
-  while (true) {
-    let input = window.prompt("請輸入姓名");
-    if (input != null && input != "") {
-      newName = input;
-      break;
-    } else {
-      window.alert("輸入名稱有誤，請重新輸入");
-    }
-  }
-  localStorage.setItem("name", newName);
-  document.getElementById("name").innerHTML = localStorage.getItem("name");
+  setName(window.prompt("請輸入姓名"), true, "輸入名稱有誤，請重新輸入")
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function setNameInfo() {
-  window.alert("捲動到頁面底部，以更改名稱");
+function clearData() {
+  setName(null, false, "null");
+  window.alert("個人資料已成功清除");
 }
