@@ -33,16 +33,15 @@ function checkName() {
 
 function setName() {
   let name;
-  // while (true) {
-    // let input = window.prompt("請輸入姓名");
-    // if (input != null && input != "") {
-    //   name = input;
-    //   break;
-    // } else {
-    //   window.alert("輸入名稱有誤，請重新輸入");
-    // }
-  name="黃威縉"
-  // }
+  while (true) {
+    let input = window.prompt("請輸入姓名");
+    if (input != null && input != "") {
+      name = input;
+      break;
+    } else {
+      window.alert("輸入名稱有誤，請重新輸入");
+    }
+  }
   localStorage.setItem("name", name);
   document.getElementById("name").innerHTML = localStorage.getItem("name");
 }
@@ -60,4 +59,8 @@ function resetName() {
   localStorage.setItem("name", newName);
   document.getElementById("name").innerHTML = localStorage.getItem("name");
   window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function setNameInfo() {
+  window.alert("捲動到頁面底部，以更改名稱");
 }
